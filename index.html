@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>박준혁 — LLM Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0f0f0f;
+    --white: #fafaf8;
+    --gray-50: #f5f5f3;
+    --gray-100: #e8e8e5;
+    --gray-200: #d1d1cc;
+    --gray-400: #9a9a94;
+    --gray-600: #5a5a56;
+    --gray-800: #2a2a28;
+    --accent: #1a1a18;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', sans-serif;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(250, 250, 248, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--gray-600);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 3rem 6rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--gray-400);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s var(--ease-out) 0.2s forwards;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s var(--ease-out) 0.35s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gray-400);
+  }
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    opacity: 0;
+    animation: fadeUp 0.8s var(--ease-out) 0.55s forwards;
+  }
+  .hero-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--gray-600);
+    line-height: 1.8;
+    max-width: 420px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    text-align: right;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--gray-400);
+    letter-spacing: 0.06em;
+  }
+
+  /* SECTION */
+  section {
+    padding: 7rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--gray-400);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  /* CASE STUDIES */
+  .case-list { display: flex; flex-direction: column; }
+
+  .case-item {
+    border-bottom: 1px solid var(--gray-100);
+    overflow: hidden;
+  }
+  .case-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+    padding: 3rem 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .case-header:hover .case-title { color: var(--gray-600); }
+  .case-meta {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--gray-400);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .case-title {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+  }
+  .case-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray-600);
+    line-height: 1.7;
+    max-width: 500px;
+  }
+  .case-badge {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 6px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 100px;
+    color: var(--gray-600);
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+  .case-badge.strong {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+  }
+  .case-toggle {
+    font-size: 20px;
+    color: var(--gray-400);
+    transition: transform 0.3s var(--ease-out), color 0.2s;
+    line-height: 1;
+    margin-top: 8px;
+  }
+  .case-item.open .case-toggle {
+    transform: rotate(45deg);
+    color: var(--black);
+  }
+
+  .case-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s var(--ease-out);
+  }
+  .case-item.open .case-body {
+    grid-template-rows: 1fr;
+  }
+  .case-body-inner { overflow: hidden; }
+  .case-body-content {
+    padding-bottom: 3rem;
+  }
+
+  /* IMAGE PLACEHOLDER */
+  .img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  .img-placeholder span {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--gray-400);
+    letter-spacing: 0.06em;
+  }
+
+  /* FLOW STEPS */
+  .flow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 4rem;
+  }
+  .flow-step {}
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+  }
+  .step-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .step-dot.problem  { background: #c0392b; }
+  .step-dot.challenge { background: #2980b9; }
+  .step-dot.approach { background: #d4884a; }
+  .step-dot.result   { background: #27ae60; }
+  .step-dot.learned  { background: #7f77dd; }
+  .step-label {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--gray-400);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .step-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray-800);
+    line-height: 1.75;
+  }
+
+  /* RESEARCH */
+  .research-card {
+    padding: 2.5rem;
+    border: 1px solid var(--gray-100);
+    border-radius: 4px;
+  }
+  .research-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+  }
+  .research-meta {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--gray-400);
+    letter-spacing: 0.04em;
+    margin-bottom: 1.25rem;
+  }
+  .research-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray-600);
+    line-height: 1.75;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tag {
+    font-size: 12px;
+    font-weight: 300;
+    padding: 7px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 100px;
+    color: var(--gray-600);
+    letter-spacing: 0.02em;
+  }
+
+  /* CONTACT */
+  .contact-wrap {
+    padding: 7rem 3rem;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+  }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-title {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .contact-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(250,250,248,0.5);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  .contact-link {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(250,250,248,0.3);
+    padding-bottom: 3px;
+    transition: border-color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .contact-link:hover { border-color: var(--white); }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 3rem;
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer span {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(250,250,248,0.3);
+    letter-spacing: 0.04em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* DIVIDER */
+  .full-divider {
+    border: none;
+    border-top: 1px solid var(--gray-100);
+    margin: 0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .hero { padding: 0 1.5rem 4rem; }
+    .hero-bottom { flex-direction: column; gap: 2rem; align-items: flex-start; }
+    .hero-stats { text-align: left; }
+    section { padding: 5rem 1.5rem; }
+    .case-header { grid-template-columns: 1fr; gap: 1rem; }
+    .flow-grid { grid-template-columns: 1fr; }
+    .contact-wrap { padding: 5rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">박준혁</span>
+  <ul class="nav-links">
+    <li><a href="#cases">케이스 스터디</a></li>
+    <li><a href="#research">연구</a></li>
+    <li><a href="#contact">연락처</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="border-bottom: 1px solid var(--gray-100);">
+  <div class="hero">
+    <p class="hero-eyebrow">LLM Engineer · AI Research Engineer</p>
+    <h1 class="hero-title">
+      실서비스에서<br>
+      LLM을 <em>설계하고</em><br>
+      운영합니다.
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        캐릭터 챗봇 서비스의 RAG 시스템 설계부터<br>
+        비용 최적화, 자동 평가 파이프라인 구축까지 —<br>
+        연구와 운영을 함께 해온 4년 7개월의 기록입니다.
+      </p>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">45%</div>
+          <div class="stat-label">LLM 비용 절감</div>
+        </div>
+        <div>
+          <div class="stat-num">+20%p</div>
+          <div class="stat-label">이미지 매칭 정확도</div>
+        </div>
+        <div>
+          <div class="stat-num">4년 7개월</div>
+          <div class="stat-label">AI/LLM 개발 경험</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <p class="section-label">케이스 스터디</p>
+  <div class="case-list">
+
+    <!-- CASE 1 -->
+    <div class="case-item" id="case-1">
+      <div class="case-header" onclick="toggleCase('case-1')">
+        <div>
+          <p class="case-meta">버블탭 · 2024 · RAG</p>
+          <h2 class="case-title">RAG 기반 챗봇<br>장기 기억 시스템</h2>
+          <p class="case-desc">컨텍스트 길이 초과로 오래된 대화를 기억 못하는 문제를 해결한 동적 기억 검색 시스템 설계</p>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
+          <span class="case-badge">기억 · 검색</span>
+          <span class="case-toggle">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-body-content">
+            <div class="img-placeholder">
+              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            </div>
+            <div class="flow-grid">
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot problem"></div>
+                  <span class="step-label">Problem</span>
+                </div>
+                <p class="step-text">캐릭터 챗봇은 장기적 관계 형성이 핵심인데, 단순 슬라이딩 윈도우로는 오래된 대화가 통째로 잘려나갔습니다. 유저 입장에선 "내가 저번에 말했잖아"가 통하지 않는 챗봇이 됩니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot challenge"></div>
+                  <span class="step-label">Challenge</span>
+                </div>
+                <p class="step-text">캐릭터 챗의 구어체 대화는 "오늘 기분 어때?" 같은 문장이 모든 대화와 의미론적으로 유사하게 나옵니다. BM25·TF-IDF 등 텍스트 매칭 계열 기법이 이 도메인에서는 전반적으로 유효하지 않다는 것을 직접 실험으로 확인했습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot approach"></div>
+                  <span class="step-label">Approach</span>
+                </div>
+                <p class="step-text">클로바 문맥 API 기반 의미 단위 청킹 → 코사인 유사도 검색 → BM25 하이브리드 시도 → Reranker 추가 → 최종적으로 텍스트 매칭 계열을 제거하고 Reranker + 코사인 유사도 조합으로 정리했습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot result"></div>
+                  <span class="step-label">Result</span>
+                </div>
+                <p class="step-text">수개월 전 대화를 자연스럽게 이어받는 응답이 가능해졌습니다. "챗봇이 나를 기억한다"는 사용자 체감이 정성적으로 개선됐습니다.</p>
+              </div>
+              <div class="flow-step" style="grid-column: 1 / -1;">
+                <div class="step-header">
+                  <div class="step-dot learned"></div>
+                  <span class="step-label">Learned</span>
+                </div>
+                <p class="step-text">범용적으로 알려진 기법도 도메인 특성에 따라 유효하지 않을 수 있습니다. 직접 실험으로 검증하고 기술 스택을 줄여나간 것이 오히려 성능 개선으로 이어졌습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-item" id="case-2">
+      <div class="case-header" onclick="toggleCase('case-2')">
+        <div>
+          <p class="case-meta">버블탭 · 2024 · RAG · 이미지 검색</p>
+          <h2 class="case-title">캐릭터 이미지<br>매칭 RAG</h2>
+          <p class="case-desc">대화 상황에 맞는 캐릭터 이미지를 자동 발화하는 시스템 — 임베딩/리랭커 기반 매칭 정확도 20%p 개선</p>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
+          <span class="case-badge strong">+20%p 정확도</span>
+          <span class="case-toggle">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-body-content">
+            <div class="img-placeholder">
+              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            </div>
+            <div class="flow-grid">
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot problem"></div>
+                  <span class="step-label">Problem</span>
+                </div>
+                <p class="step-text">텍스트만 오가는 대화는 몰입감에 한계가 있었고, 상황에 맞는 캐릭터 이미지가 자동으로 등장하는 기능이 전혀 없었습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot challenge"></div>
+                  <span class="step-label">Challenge</span>
+                </div>
+                <p class="step-text">창작자가 입력한 이미지 설명 키워드(예: "웃음")와 LLM이 생성한 상황 키워드(예: "웃는 상황이었다") 간의 표현 스타일 격차가 유사도 비교를 어긋나게 했습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot approach"></div>
+                  <span class="step-label">Approach</span>
+                </div>
+                <p class="step-text">창작자 키워드 임베딩 인덱싱 → LLM 키워드 생성 후 코사인 유사도 비교 → Reranker 추가. UI 안내 개선을 시도했으나 한계가 있어, 창작자 패턴을 분석해 LLM 키워드 생성 프롬프트를 조정하는 방향으로 전환했습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot result"></div>
+                  <span class="step-label">Result</span>
+                </div>
+                <p class="step-text">내부 자동 평가 지표 기준 매칭 정확도 +20%p 개선. 대화 흐름에 맞는 이미지가 자연스럽게 등장하며 캐릭터 몰입감이 높아졌습니다.</p>
+              </div>
+              <div class="flow-step" style="grid-column: 1 / -1;">
+                <div class="step-header">
+                  <div class="step-dot learned"></div>
+                  <span class="step-label">Learned</span>
+                </div>
+                <p class="step-text">검색 품질 문제가 항상 검색 모델의 문제는 아닙니다. 생성 프롬프트 튜닝이 더 효과적인 해결책이 된 케이스로, 문제의 병목이 어디에 있는지 정확히 파악하는 것이 중요했습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-item" id="case-3">
+      <div class="case-header" onclick="toggleCase('case-3')">
+        <div>
+          <p class="case-meta">버블탭 · 2024 · 비용 최적화</p>
+          <h2 class="case-title">LLM 비용 최적화<br>& 폴백 체계</h2>
+          <p class="case-desc">영역별 캐싱 전략과 프롬프트 구조 재설계로 채팅당 LLM 단가 최대 45% 절감</p>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
+          <span class="case-badge strong">-45% 비용</span>
+          <span class="case-toggle">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-body-content">
+            <div class="img-placeholder">
+              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            </div>
+            <div class="flow-grid">
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot problem"></div>
+                  <span class="step-label">Problem</span>
+                </div>
+                <p class="step-text">사용자 증가와 창작 영역 확장으로 프롬프트가 무거워지면서 채팅당 LLM 비용이 가파르게 증가했습니다. 단순 트래픽 증가가 아닌 구조적 문제였습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot challenge"></div>
+                  <span class="step-label">Challenge</span>
+                </div>
+                <p class="step-text">캐릭터/세계관/씬 세 영역의 조합으로 프롬프트가 구성되어 유저마다 다른 에셋 조합을 사용합니다. 캐싱은 내용 변경 시 즉시 무효화되기 때문에 배치 순서가 히트율의 핵심 변수였습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot approach"></div>
+                  <span class="step-label">Approach</span>
+                </div>
+                <p class="step-text">프롬프트를 영역별로 분리해 독립 캐싱 적용. 불변 영역(캐릭터, 세계관)을 상단에, 가변 영역(씬, 최근 대화)을 하단에 배치하는 구조로 재설계했습니다. API 장애·타임아웃 시 대체 모델로 자동 전환하는 폴백 로직도 함께 구축했습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot result"></div>
+                  <span class="step-label">Result</span>
+                </div>
+                <p class="step-text">채팅당 LLM 비용 최대 45% 절감. 트래픽이 늘어도 비용이 선형으로 증가하지 않는 구조를 만들었습니다.</p>
+              </div>
+              <div class="flow-step" style="grid-column: 1 / -1;">
+                <div class="step-header">
+                  <div class="step-dot learned"></div>
+                  <span class="step-label">Learned</span>
+                </div>
+                <p class="step-text">비용 최적화 문제가 결국 프롬프트 구조 설계 문제로 귀결됐습니다. LLM 엔지니어링에서 아키텍처적 사고가 얼마나 중요한지 체감한 케이스입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 4 -->
+    <div class="case-item" id="case-4">
+      <div class="case-header" onclick="toggleCase('case-4')">
+        <div>
+          <p class="case-meta">버블탭 · 2024 · 평가 자동화</p>
+          <h2 class="case-title">LLM 응답 품질<br>평가 체계 구축</h2>
+          <p class="case-desc">자체 LLM 구축을 위한 자동화 평가 파이프라인 — 루브릭 설계부터 엔트로피 기반 데이터셋 구축까지</p>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
+          <span class="case-badge">평가 · 자동화</span>
+          <span class="case-toggle">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-body-content">
+            <div class="img-placeholder">
+              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            </div>
+            <div class="flow-grid">
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot problem"></div>
+                  <span class="step-label">Problem</span>
+                </div>
+                <p class="step-text">자체 LLM 구축을 위한 학습 데이터 품질 검증 과정에서, 캐릭터 챗 응답의 "좋은 대화"를 수치로 정의하는 기준 자체가 없었습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot challenge"></div>
+                  <span class="step-label">Challenge</span>
+                </div>
+                <p class="step-text">정성적인 대화 데이터를 정량적으로 평가하기 위한 루브릭 프롬프트 작성이 핵심 난제였습니다. 평가 모델이 없는 상태에서 균일한 데이터 분포도 확보해야 했습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot approach"></div>
+                  <span class="step-label">Approach</span>
+                </div>
+                <p class="step-text">캐릭터 일관성, 맥락·기억, 언어 품질, 형식·기술, 세계관·씬 준수 5가지 루브릭 기준 설계 → 휴먼 평가 후 Greedy Max-Entropy Selection으로 점수대별 균일 분포 데이터셋 구축 → 다양한 closed LLM과 프롬프트 조합 실험으로 휴먼 평가와 높은 상관계수를 달성하는 조합 선정.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot result"></div>
+                  <span class="step-label">Result</span>
+                </div>
+                <p class="step-text">자동화된 평가 파이프라인으로 학습 데이터 품질 검증을 사람 없이도 일관되게 수행할 수 있는 체계를 구축했습니다.</p>
+              </div>
+              <div class="flow-step" style="grid-column: 1 / -1;">
+                <div class="step-header">
+                  <div class="step-dot learned"></div>
+                  <span class="step-label">Learned</span>
+                </div>
+                <p class="step-text">많은 closed LLM이 생각보다 휴먼 평가와 상관관계가 낮았습니다. 좋은 평가 시스템은 좋은 모델이 아니라 좋은 기준에서 나온다는 것을 배웠습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- RESEARCH -->
+<section id="research">
+  <p class="section-label">연구</p>
+  <div class="research-card">
+    <h3 class="research-title">개체 유형 정보를 활용한 다차원 지식 그래프 임베딩</h3>
+    <p class="research-meta">한국정보기술학회논문지 제21권 제11호 · 2023.12 · KCI 등재</p>
+    <p class="research-desc">ChatGPT를 통해 Wordnet 데이터 개체의 유형 정보를 추출하고, 개체 유형 정보를 반영한 네거티브 샘플링과 어텐션 메커니즘을 활용한 다차원 지식 그래프 임베딩 병합 방법을 제안했습니다.</p>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- SKILLS -->
+<section>
+  <p class="section-label">기술 스택</p>
+  <div class="skills-grid">
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">LLM Prompt Engineering</span>
+    <span class="skill-tag">RAG</span>
+    <span class="skill-tag">LLM Evaluation</span>
+    <span class="skill-tag">NLP</span>
+    <span class="skill-tag">ML</span>
+    <span class="skill-tag">LLM 기반 업무 자동화</span>
+    <span class="skill-tag">Knowledge Graph</span>
+    <span class="skill-tag">Git</span>
+    <span class="skill-tag">OpenAI API</span>
+    <span class="skill-tag">Claude API</span>
+    <span class="skill-tag">Gemini API</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-title">함께 일하고<br>싶으시다면</h2>
+    <p class="contact-desc">LLM 서비스 개발 및 운영에 관심 있는 팀이라면<br>언제든 연락 주세요.</p>
+    <a href="mailto:junhyuk6230@gmail.com" class="contact-link">junhyuk6230@gmail.com</a>
+  </div>
+</div>
+
+<footer>
+  <span>박준혁 · LLM Engineer</span>
+  <span>© 2025</span>
+</footer>
+
+<script>
+function toggleCase(id) {
+  const item = document.getElementById(id);
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
