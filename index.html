@@ -159,8 +159,65 @@
       <div class="case-body" id="case-1-body">
         <div class="case-body-inner">
           <div class="case-body-content">
-            <div class="img-placeholder">
-              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            <div class="case-diagram">
+<svg viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d1-title d1-desc" font-family="'Noto Sans KR', sans-serif">
+  <title id="d1-title">RAG 기반 장기 기억 검색 파이프라인</title>
+  <desc id="d1-desc">과거 대화를 의미 단위로 청킹·임베딩해 벡터 인덱스에 저장하고, 실시간 응답 시 유사도 검색과 리랭커로 관련 맥락을 찾아 LLM 프롬프트에 주입하는 흐름. BM25 등 텍스트 매칭은 구어체 도메인에서 무효해 제거함.</desc>
+  <defs>
+    <marker id="arrow1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
+    </marker>
+  </defs>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 01 · RAG</text>
+  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">RAG 기반 장기 기억 — 검색 파이프라인</text>
+  <text x="40" y="108" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 사전 인덱싱 · 오프라인</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="115" y="153">과거 대화 로그</text>
+    <rect x="216" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="291" y="148">의미 단위 청킹</text>
+    <text x="291" y="165" font-size="10.5" fill="var(--gray-400,#9a9a94)">CLOVA 문맥 API</text>
+    <rect x="392" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="467" y="153">임베딩</text>
+    <rect x="568" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-400,#9a9a94)"/>
+    <text x="643" y="153">벡터 인덱스</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow1)">
+    <line x1="190" y1="149" x2="214" y2="149"/>
+    <line x1="366" y1="149" x2="390" y2="149"/>
+    <line x1="542" y1="149" x2="566" y2="149"/>
+  </g>
+  <path d="M643,176 C643,212 332,210 332,250" fill="none" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrow1)"/>
+  <text x="500" y="205" font-size="10.5" fill="var(--gray-400,#9a9a94)">검색 시 참조</text>
+  <text x="40" y="240" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 실시간 응답</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="250" width="160" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="120" y="287">새 유저 메시지</text>
+    <rect x="232" y="250" width="190" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="327" y="282">유사도 검색</text>
+    <text x="327" y="300" font-size="10.5" fill="var(--gray-400,#9a9a94)">쿼리 임베딩 · 코사인 · Reranker</text>
+    <rect x="454" y="250" width="160" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="534" y="282">Top-k 과거 맥락</text>
+    <text x="534" y="300" font-size="10.5" fill="var(--gray-400,#9a9a94)">프롬프트 주입</text>
+    <rect x="646" y="250" width="160" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <circle cx="668" cy="270" r="3.5" fill="#27ae60"/>
+    <text x="730" y="287">LLM 응답</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow1)">
+    <line x1="200" y1="282" x2="230" y2="282"/>
+    <line x1="422" y1="282" x2="452" y2="282"/>
+    <line x1="614" y1="282" x2="644" y2="282"/>
+  </g>
+  <rect x="40" y="356" width="766" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
+  <circle cx="62" cy="378" r="4" fill="#7f77dd"/>
+  <text x="76" y="382" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
+  <text x="76" y="401" font-size="12.5" fill="var(--gray-800,#2a2a28)">BM25 · TF-IDF 텍스트 매칭은 구어체 대화 도메인에서 무효 → 제거하고 Reranker + 코사인 유사도로 단순화</text>
+  <g font-size="11" fill="var(--gray-600,#5a5a56)">
+    <circle cx="46" cy="446" r="4" fill="#27ae60"/><text x="56" y="450">결과 산출</text>
+    <circle cx="146" cy="446" r="4" fill="#7f77dd"/><text x="156" y="450">배운 점</text>
+    <line x1="246" y1="446" x2="270" y2="446" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="278" y="450">사전 구축 자산 참조</text>
+  </g>
+</svg>
             </div>
             <div class="flow-grid">
               <div class="flow-step">
@@ -220,8 +277,59 @@
       <div class="case-body" id="case-2-body">
         <div class="case-body-inner">
           <div class="case-body-content">
-            <div class="img-placeholder">
-              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            <div class="case-diagram">
+<svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d2-title d2-desc" font-family="'Noto Sans KR', sans-serif">
+  <title id="d2-title">캐릭터 이미지 매칭 키워드 정합 파이프라인</title>
+  <desc id="d2-desc">창작자가 입력한 이미지 키워드를 임베딩 인덱스로 만들고, 실시간 대화 맥락으로 LLM이 생성한 상황 키워드를 유사도 매칭해 이미지를 선택. 병목은 검색 모델이 아니라 LLM 키워드 생성이었고, 생성 프롬프트 조정으로 정확도 20%p 개선.</desc>
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
+    </marker>
+  </defs>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 02 · 이미지 검색</text>
+  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">캐릭터 이미지 매칭 — 키워드 정합</text>
+  <rect x="600" y="44" width="240" height="26" rx="13" fill="none" stroke="#27ae60"/>
+  <text x="720" y="61" font-size="12" text-anchor="middle" fill="#27ae60">매칭 정확도 +20%p</text>
+  <text x="40" y="108" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 창작자 키워드 인덱싱 · 오프라인</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="122" width="180" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="130" y="147">창작자 이미지 키워드</text>
+    <text x="130" y="165" font-size="10.5" fill="var(--gray-400,#9a9a94)">예: “웃음”</text>
+    <rect x="260" y="122" width="160" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-400,#9a9a94)"/>
+    <text x="340" y="153">임베딩 인덱스</text>
+  </g>
+  <line x1="220" y1="149" x2="258" y2="149" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow2)"/>
+  <path d="M340,176 C340,205 560,200 560,228" fill="none" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrow2)"/>
+  <text x="455" y="200" font-size="10.5" fill="var(--gray-400,#9a9a94)">키워드 비교</text>
+  <text x="40" y="218" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 실시간 이미지 선택</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="228" width="140" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="110" y="265">대화 맥락</text>
+    <rect x="212" y="228" width="196" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="310" y="260">LLM 상황 키워드 생성</text>
+    <text x="310" y="278" font-size="10.5" fill="var(--gray-400,#9a9a94)">예: “웃는 상황이었다”</text>
+    <rect x="490" y="228" width="150" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="565" y="260">유사도 매칭</text>
+    <text x="565" y="278" font-size="10.5" fill="var(--gray-400,#9a9a94)">코사인 · Reranker</text>
+    <rect x="672" y="228" width="134" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <circle cx="692" cy="248" r="3.5" fill="#27ae60"/>
+    <text x="739" y="265">이미지 선택</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow2)">
+    <line x1="180" y1="260" x2="210" y2="260"/>
+    <line x1="408" y1="260" x2="488" y2="260"/>
+    <line x1="640" y1="260" x2="670" y2="260"/>
+  </g>
+  <rect x="40" y="332" width="766" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
+  <circle cx="62" cy="354" r="4" fill="#7f77dd"/>
+  <text x="76" y="358" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
+  <text x="76" y="377" font-size="12.5" fill="var(--gray-800,#2a2a28)">병목은 검색 모델이 아니라 LLM의 키워드 생성 → 생성 프롬프트를 조정해 매칭 정확도 +20%p 개선</text>
+  <g font-size="11" fill="var(--gray-600,#5a5a56)">
+    <circle cx="46" cy="424" r="4" fill="#27ae60"/><text x="56" y="428">결과 산출</text>
+    <circle cx="146" cy="424" r="4" fill="#7f77dd"/><text x="156" y="428">배운 점</text>
+    <line x1="246" y1="424" x2="270" y2="424" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="278" y="428">사전 구축 자산 참조</text>
+  </g>
+</svg>
             </div>
             <div class="flow-grid">
               <div class="flow-step">
@@ -281,8 +389,52 @@
       <div class="case-body" id="case-3-body">
         <div class="case-body-inner">
           <div class="case-body-content">
-            <div class="img-placeholder">
-              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            <div class="case-diagram">
+<svg viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d3-title d3-desc" font-family="'Noto Sans KR', sans-serif">
+  <title id="d3-title">프롬프트 영역 분리 캐싱과 모델 폴백 구조</title>
+  <desc id="d3-desc">프롬프트를 불변 영역(캐릭터·세계관)과 가변 영역(씬·최근 대화)으로 나누고, 불변 영역을 상단에 고정 배치해 캐시 적중률을 높임. API 장애·타임아웃 시 대체 모델로 자동 전환하는 폴백을 함께 구성해 채팅당 비용을 최대 45% 절감.</desc>
+  <defs>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
+    </marker>
+  </defs>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 03 · 비용 최적화</text>
+  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">프롬프트 영역 분리 캐싱 + 폴백</text>
+  <rect x="610" y="44" width="230" height="26" rx="13" fill="none" stroke="#27ae60"/>
+  <text x="725" y="61" font-size="12" text-anchor="middle" fill="#27ae60">채팅당 비용 최대 45%↓</text>
+  <text x="40" y="106" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 프롬프트 구조 재배치</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="118" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <text x="220" y="143">불변 · 캐릭터</text>
+    <rect x="40" y="162" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <text x="220" y="187">불변 · 세계관</text>
+    <rect x="40" y="214" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="220" y="239">가변 · 씬</text>
+    <rect x="40" y="258" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="220" y="283">가변 · 최근 대화</text>
+  </g>
+  <g font-size="12">
+    <circle cx="430" cy="160" r="4" fill="#27ae60"/>
+    <text x="444" y="156" fill="#27ae60">상단 고정 = 불변 영역</text>
+    <text x="444" y="174" font-size="11" fill="var(--gray-600,#5a5a56)">→ 캐시 적중률 ↑</text>
+    <circle cx="430" cy="246" r="4" fill="var(--gray-400,#9a9a94)"/>
+    <text x="444" y="242" fill="var(--gray-800,#2a2a28)">하단 배치 = 가변 영역</text>
+    <text x="444" y="260" font-size="11" fill="var(--gray-600,#5a5a56)">→ 변경 시 즉시 무효화</text>
+  </g>
+  <text x="40" y="338" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 모델 폴백</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="350" width="150" height="48" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="115" y="379">주 모델</text>
+    <rect x="380" y="350" width="220" height="48" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="490" y="379">대체 모델 자동 전환</text>
+  </g>
+  <line x1="190" y1="374" x2="378" y2="374" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow3)"/>
+  <text x="284" y="366" font-size="10.5" text-anchor="middle" fill="var(--gray-400,#9a9a94)">API 장애 · 타임아웃 시</text>
+  <rect x="40" y="416" width="766" height="50" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
+  <circle cx="62" cy="437" r="4" fill="#7f77dd"/>
+  <text x="76" y="434" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
+  <text x="76" y="451" font-size="12.5" fill="var(--gray-800,#2a2a28)">비용 최적화 문제가 결국 프롬프트 구조 설계 문제로 귀결됐다</text>
+</svg>
             </div>
             <div class="flow-grid">
               <div class="flow-step">
@@ -342,8 +494,56 @@
       <div class="case-body" id="case-4-body">
         <div class="case-body-inner">
           <div class="case-body-content">
-            <div class="img-placeholder">
-              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            <div class="case-diagram">
+<svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d4-title d4-desc" font-family="'Noto Sans KR', sans-serif">
+  <title id="d4-title">루브릭 기반 LLM 응답 자동 평가 파이프라인</title>
+  <desc id="d4-desc">5가지 루브릭 기준으로 휴먼 평가를 수행하고, Greedy Max-Entropy Selection으로 점수대별 균일 분포 데이터셋을 만든 뒤, 여러 LLM과 프롬프트 조합을 실험해 휴먼 평가와 상관계수가 높은 조합을 자동 평가기로 선정.</desc>
+  <defs>
+    <marker id="arrow4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
+    </marker>
+  </defs>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 04 · 평가 자동화</text>
+  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">루브릭 기반 응답 자동 평가</text>
+  <text x="40" y="106" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 5가지 평가 루브릭</text>
+  <g font-size="11.5" fill="var(--gray-800,#2a2a28)" text-anchor="middle">
+    <rect x="40" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="115" y="142">캐릭터 일관성</text>
+    <rect x="202" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="277" y="142">맥락 · 기억</text>
+    <rect x="364" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="439" y="142">언어 품질</text>
+    <rect x="526" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="601" y="142">형식 · 기술</text>
+    <rect x="688" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="763" y="142">세계관 · 씬 준수</text>
+  </g>
+  <path d="M439,156 C439,176 115,176 115,200" fill="none" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrow4)"/>
+  <text x="300" y="176" font-size="10.5" fill="var(--gray-400,#9a9a94)">루브릭 기준 적용</text>
+  <text x="40" y="196" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 평가기 구축</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="206" width="150" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="115" y="243">휴먼 평가</text>
+    <rect x="222" y="206" width="200" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="322" y="238">Max-Entropy 데이터셋</text>
+    <text x="322" y="256" font-size="10.5" fill="var(--gray-400,#9a9a94)">점수대별 균일 분포</text>
+    <rect x="454" y="206" width="190" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="549" y="238">LLM×프롬프트 실험</text>
+    <text x="549" y="256" font-size="10.5" fill="var(--gray-400,#9a9a94)">상관계수 비교</text>
+    <rect x="676" y="206" width="162" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <circle cx="697" cy="226" r="3.5" fill="#27ae60"/>
+    <text x="757" y="243">자동 평가기</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow4)">
+    <line x1="190" y1="238" x2="220" y2="238"/>
+    <line x1="422" y1="238" x2="452" y2="238"/>
+    <line x1="644" y1="238" x2="674" y2="238"/>
+  </g>
+  <rect x="40" y="312" width="798" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
+  <circle cx="62" cy="334" r="4" fill="#7f77dd"/>
+  <text x="76" y="338" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
+  <text x="76" y="357" font-size="12.5" fill="var(--gray-800,#2a2a28)">많은 closed LLM이 휴먼 평가와 상관이 낮았다 — 좋은 평가는 좋은 모델이 아니라 좋은 기준에서 나온다</text>
+  <g font-size="11" fill="var(--gray-600,#5a5a56)">
+    <circle cx="46" cy="402" r="4" fill="#27ae60"/><text x="56" y="406">결과 산출</text>
+    <circle cx="146" cy="402" r="4" fill="#7f77dd"/><text x="156" y="406">배운 점</text>
+    <line x1="246" y1="402" x2="270" y2="402" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="278" y="406">루브릭 기준 적용</text>
+  </g>
+</svg>
             </div>
             <div class="flow-grid">
               <div class="flow-step">
@@ -403,8 +603,55 @@
       <div class="case-body" id="case-5-body">
         <div class="case-body-inner">
           <div class="case-body-content">
-            <div class="img-placeholder">
-              <span>서비스 스크린샷 영역 — 추후 추가 예정</span>
+            <div class="case-diagram">
+<svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5-title d5-desc" font-family="'Noto Sans KR', sans-serif">
+  <title id="d5-title">시장별 프롬프트 설계와 A/B 의사결정 루프</title>
+  <desc id="d5-desc">한국·태국·일본·대만 시장별 시스템 프롬프트를 분리 설계하고, 탈옥 방지·콘텐츠 필터링·응답 품질을 계층으로 구성. 변경안을 정성·정량 A/B 평가로 검증해 품질과 안전성을 동시에 높이는 변경만 반영하는 루프를 운영.</desc>
+  <defs>
+    <marker id="arrow5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
+    </marker>
+  </defs>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 05 · 프롬프트 엔지니어링</text>
+  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">시장별 프롬프트 설계 + A/B 루프</text>
+  <text x="40" y="106" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 시장별 시스템 프롬프트</text>
+  <g font-size="12.5" fill="var(--gray-800,#2a2a28)" text-anchor="middle">
+    <rect x="40" y="118" width="90" height="36" rx="18" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="85" y="141">한국</text>
+    <rect x="142" y="118" width="90" height="36" rx="18" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="187" y="141">태국</text>
+    <rect x="244" y="118" width="90" height="36" rx="18" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="289" y="141">일본</text>
+    <rect x="346" y="118" width="90" height="36" rx="18" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="391" y="141">대만</text>
+  </g>
+  <text x="40" y="194" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 계층 구성</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="206" width="300" height="38" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="190" y="230">탈옥 방지</text>
+    <rect x="40" y="248" width="300" height="38" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="190" y="272">콘텐츠 필터링</text>
+    <rect x="40" y="290" width="300" height="38" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="190" y="314">응답 품질</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow5)">
+    <line x1="85" y1="154" x2="160" y2="204"/>
+    <line x1="187" y1="154" x2="183" y2="204"/>
+    <line x1="289" y1="154" x2="210" y2="204"/>
+    <line x1="391" y1="154" x2="225" y2="204"/>
+  </g>
+  <text x="470" y="194" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">③ A/B 의사결정 루프</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="470" y="206" width="320" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="630" y="231">프롬프트 변경안</text>
+    <rect x="470" y="262" width="320" height="44" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="630" y="289">정성 · 정량 A/B 평가</text>
+    <rect x="470" y="322" width="320" height="44" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <circle cx="490" cy="342" r="3.5" fill="#27ae60"/>
+    <text x="630" y="349">품질↑ · 안전성↑ 변경만 반영</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow5)">
+    <line x1="630" y1="246" x2="630" y2="260"/>
+    <line x1="630" y1="306" x2="630" y2="320"/>
+  </g>
+  <path d="M790,344 C828,344 828,226 794,226" fill="none" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrow5)"/>
+  <text x="845" y="288" font-size="10.5" text-anchor="middle" fill="var(--gray-400,#9a9a94)" transform="rotate(90 845 288)">반복</text>
+  <rect x="40" y="390" width="750" height="56" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
+  <circle cx="62" cy="412" r="4" fill="#7f77dd"/>
+  <text x="76" y="416" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
+  <text x="76" y="435" font-size="12.5" fill="var(--gray-800,#2a2a28)">프롬프트 개선은 감이 아니라 측정으로 — 트레이드오프가 있는 문제일수록 평가 루프가 의사결정의 근거가 된다</text>
+</svg>
             </div>
             <div class="flow-grid">
               <div class="flow-step">

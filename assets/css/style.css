@@ -328,6 +328,22 @@ section {
   letter-spacing: 0.06em;
 }
 
+/* CASE DIAGRAM (inline SVG, theme-aware) */
+.case-diagram {
+  margin-bottom: 3rem;
+  padding: 1.75rem;
+  border: 1px solid var(--gray-100);
+  border-radius: 4px;
+  background: var(--white);
+  overflow-x: auto;
+}
+.case-diagram svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
 /* FLOW STEPS */
 .flow-grid {
   display: grid;
