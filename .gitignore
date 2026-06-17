@@ -1,0 +1,5 @@
+# Local preview config (contains machine-specific absolute paths)
+.claude/
+
+# Private resume-review notes — keep out of the public Pages repo
+이력서_고도화_제안.txt
