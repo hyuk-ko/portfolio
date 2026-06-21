@@ -114,11 +114,11 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 3rem 6rem;
+  justify-content: center;
+  padding: 4rem 3rem;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -159,24 +159,6 @@ nav {
   color: var(--gray-600);
   line-height: 1.8;
   max-width: 420px;
-}
-.hero-stats {
-  display: flex;
-  gap: 3rem;
-  text-align: right;
-}
-.stat-num {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.stat-label {
-  font-size: 11px;
-  font-weight: 300;
-  color: var(--gray-400);
-  letter-spacing: 0.06em;
 }
 
 /* SECTION */
@@ -220,6 +202,42 @@ section {
 }
 .about-body p:last-child { margin-bottom: 0; }
 .about-body strong { color: var(--black); font-weight: 500; }
+
+/* SERVICE LINKS */
+.service-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-800);
+  text-decoration: none;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 999px;
+  transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.service-chip:hover {
+  color: var(--white);
+  background: var(--black);
+  border-color: var(--black);
+}
+.service-chip-arrow {
+  font-size: 12px;
+  color: var(--gray-400);
+  transition: transform 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.service-chip:hover .service-chip-arrow {
+  color: var(--white);
+  transform: translate(1px, -1px);
+}
 
 /* CASE STUDIES */
 .case-list { display: flex; flex-direction: column; }
@@ -266,7 +284,7 @@ section {
   font-weight: 300;
   color: var(--gray-600);
   line-height: 1.7;
-  max-width: 500px;
+  white-space: nowrap;
 }
 .case-badge {
   font-size: 12px;
@@ -607,7 +625,6 @@ footer span {
   .nav-links { gap: 1.25rem; }
   .hero { padding: 0 1.5rem 4rem; }
   .hero-bottom { flex-direction: column; gap: 2rem; align-items: flex-start; }
-  .hero-stats { text-align: left; gap: 2rem; }
   section { padding: 5rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .case-header { grid-template-columns: 1fr; gap: 1rem; }

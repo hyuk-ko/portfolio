@@ -85,24 +85,10 @@
     </h1>
     <div class="hero-bottom">
       <p class="hero-desc">
-        캐릭터 챗봇의 RAG·비용·평가 문제를<br>
-        연구하고 PoC로 검증해 제품에 반영해온<br>
-        4년 9개월의 기록입니다.
+        LLM 서비스의 품질·비용·안정성 문제를<br>
+        연구하고 PoC로 검증해<br>
+        제품에 반영해 왔습니다.
       </p>
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num">45%</div>
-          <div class="stat-label">LLM 비용 절감</div>
-        </div>
-        <div>
-          <div class="stat-num">+20%p</div>
-          <div class="stat-label">이미지 매칭 정확도</div>
-        </div>
-        <div>
-          <div class="stat-num">4년 9개월</div>
-          <div class="stat-label">AI/LLM 개발 경험</div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -114,19 +100,21 @@
     <p class="about-lead reveal">
       범용 기법을 그대로 쓰기보다,<br>
       <em>도메인에 맞게 검증하고</em><br>
-      줄여나가는 엔지니어입니다.
+      다듬어가는 엔지니어입니다.
     </p>
     <div class="about-body reveal">
       <p>
-        캐릭터 페르소나 챗봇 서비스 <strong>버블챗·팅글</strong>의 AI팀에서
-        RAG 설계, LLM 비용 최적화, 응답 품질 자동 평가를 맡고 있습니다.
+        웹툰 서비스(버블탭)에서 캐릭터 챗봇으로 피벗하는 시기에 AI팀에 합류해,
+        신규 챗봇의 LLM 핵심 기능을 초기부터 설계했습니다.
+        지금은 캐릭터 페르소나 챗봇 <strong>버블챗·팅글</strong>에서
+        RAG 설계, LLM 비용 최적화, 응답 품질 자동 평가를 맡고 있으며,
         직접 배포·운영하기보다 <strong>기능을 연구·설계하고 PoC로 검증해</strong>
         개발팀 구현으로 잇는 역할입니다.
       </p>
       <p>
         실시간 채팅이라는 제약 안에서 <strong>품질·비용·안정성</strong>의 균형을 찾는 데
-        집중합니다. 대학원 연구실(AMI Lab)에서 지식 그래프 임베딩을 연구해 KCI 논문을
-        게재했고, 이후 산업 현장에서 그 연구 역량을 제품 문제에 적용해 왔습니다.
+        집중합니다. 프롬프트 구조 설계부터 RAG, 비용 최적화, 자동 평가까지
+        제품에 직접 닿는 LLM 문제를 폭넓게 다뤄 왔습니다.
       </p>
       <p>
         널리 알려진 기법도 도메인 특성에 따라 유효하지 않을 수 있다고 믿습니다.
@@ -141,6 +129,14 @@
 <!-- CASE STUDIES -->
 <section id="cases">
   <p class="section-label reveal">주요 프로젝트</p>
+  <div class="service-links reveal">
+    <a class="service-chip" href="https://bubblechat.ai/chat" target="_blank" rel="noopener">
+      버블챗 <span class="service-chip-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="service-chip" href="https://tingle.chat/chat" target="_blank" rel="noopener">
+      팅글 <span class="service-chip-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
   <div class="case-list">
 
     <!-- CASE 1 -->
@@ -162,7 +158,7 @@
             <div class="case-diagram">
 <svg viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d1-title d1-desc" font-family="'Noto Sans KR', sans-serif">
   <title id="d1-title">RAG 기반 장기 기억 검색 파이프라인</title>
-  <desc id="d1-desc">과거 대화를 의미 단위로 청킹·임베딩해 벡터 인덱스에 저장하고, 실시간 응답 시 유사도 검색과 리랭커로 관련 맥락을 찾아 LLM 프롬프트에 주입하는 흐름. BM25 등 텍스트 매칭은 구어체 도메인에서 무효해 제거함.</desc>
+  <desc id="d1-desc">과거 대화를 의미 단위로 청킹·임베딩해 벡터 인덱스에 저장하고, 실시간 응답 시 유사도 검색으로 관련 맥락을 찾아 LLM 프롬프트에 주입하는 흐름. 텍스트 매칭 계열은 구어체 도메인에서 무효해 제거함.</desc>
   <defs>
     <marker id="arrow1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
@@ -175,8 +171,7 @@
     <rect x="40" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
     <text x="115" y="153">과거 대화 로그</text>
     <rect x="216" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="291" y="148">의미 단위 청킹</text>
-    <text x="291" y="165" font-size="10.5" fill="var(--gray-400,#9a9a94)">CLOVA 문맥 API</text>
+    <text x="291" y="153">의미 단위 청킹</text>
     <rect x="392" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
     <text x="467" y="153">임베딩</text>
     <rect x="568" y="122" width="150" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-400,#9a9a94)"/>
@@ -194,8 +189,7 @@
     <rect x="40" y="250" width="160" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
     <text x="120" y="287">새 유저 메시지</text>
     <rect x="232" y="250" width="190" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="327" y="282">유사도 검색</text>
-    <text x="327" y="300" font-size="10.5" fill="var(--gray-400,#9a9a94)">쿼리 임베딩 · 코사인 · Reranker</text>
+    <text x="327" y="287">유사도 검색</text>
     <rect x="454" y="250" width="160" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
     <text x="534" y="282">Top-k 과거 맥락</text>
     <text x="534" y="300" font-size="10.5" fill="var(--gray-400,#9a9a94)">프롬프트 주입</text>
@@ -210,12 +204,11 @@
   </g>
   <rect x="40" y="356" width="766" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
   <circle cx="62" cy="378" r="4" fill="#7f77dd"/>
-  <text x="76" y="382" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
-  <text x="76" y="401" font-size="12.5" fill="var(--gray-800,#2a2a28)">BM25 · TF-IDF 텍스트 매칭은 구어체 대화 도메인에서 무효 → 제거하고 Reranker + 코사인 유사도로 단순화</text>
+  <text x="76" y="382" font-size="10.5" letter-spacing="0.5" fill="#7f77dd">배운 점</text>
+  <text x="76" y="401" font-size="12.5" fill="var(--gray-800,#2a2a28)">텍스트 매칭 계열은 구어체 대화 도메인에서 무효 → 제거하고 임베딩 유사도 검색으로 단순화</text>
   <g font-size="11" fill="var(--gray-600,#5a5a56)">
     <circle cx="46" cy="446" r="4" fill="#27ae60"/><text x="56" y="450">결과 산출</text>
-    <circle cx="146" cy="446" r="4" fill="#7f77dd"/><text x="156" y="450">배운 점</text>
-    <line x1="246" y1="446" x2="270" y2="446" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="278" y="450">사전 구축 자산 참조</text>
+    <line x1="146" y1="446" x2="170" y2="446" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="178" y="450">사전 구축 자산 참조</text>
   </g>
 </svg>
             </div>
@@ -232,14 +225,14 @@
                   <div class="step-dot challenge"></div>
                   <span class="step-label">Challenge</span>
                 </div>
-                <p class="step-text">캐릭터 챗의 구어체 대화는 "오늘 기분 어때?" 같은 문장이 모든 대화와 의미론적으로 유사하게 나옵니다. BM25·TF-IDF 등 텍스트 매칭 계열 기법이 이 도메인에서는 전반적으로 유효하지 않다는 것을 직접 실험으로 확인했습니다.</p>
+                <p class="step-text">캐릭터 챗의 구어체 대화는 "오늘 기분 어때?" 같은 문장이 모든 대화와 의미론적으로 유사하게 나옵니다. 텍스트 매칭 계열 기법이 이 도메인에서는 전반적으로 유효하지 않다는 것을 직접 실험으로 확인했습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
                   <div class="step-dot approach"></div>
                   <span class="step-label">Approach</span>
                 </div>
-                <p class="step-text">클로바 문맥 API 기반 의미 단위 청킹 → 코사인 유사도 검색 → BM25 하이브리드 시도 → Reranker 추가 → 최종적으로 텍스트 매칭 계열을 제거하고 Reranker + 코사인 유사도 조합으로 정리했습니다.</p>
+                <p class="step-text">과거 대화를 의미 단위로 청킹·임베딩해 벡터 인덱스로 구축하고, 실시간에는 임베딩 유사도 검색으로 관련 맥락을 찾아 프롬프트에 주입했습니다. 텍스트 매칭 계열 하이브리드도 시도했으나 구어체 도메인에서 효과가 없어, 임베딩 유사도 검색 기반으로 단순화했습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
@@ -253,7 +246,7 @@
                   <div class="step-dot learned"></div>
                   <span class="step-label">Learned</span>
                 </div>
-                <p class="step-text">범용적으로 알려진 기법도 도메인 특성에 따라 유효하지 않을 수 있습니다. 직접 실험으로 검증하고 기술 스택을 줄여나간 것이 오히려 성능 개선으로 이어졌습니다.</p>
+                <p class="step-text">범용적으로 알려진 청킹, 임베딩 방법도 도메인 특성에 따라 유효하지 않을 수 있습니다. 직접 실험으로 검증하고 기술 스택을 줄여나간 것이 오히려 성능 개선으로 이어졌습니다.</p>
               </div>
             </div>
           </div>
@@ -265,118 +258,6 @@
     <div class="case-item reveal" id="case-2">
       <button class="case-header" type="button" aria-expanded="false" aria-controls="case-2-body">
         <div>
-          <p class="case-meta">버블탭 · 2024 · RAG · 이미지 검색</p>
-          <h2 class="case-title">캐릭터 이미지<br>매칭 RAG</h2>
-          <p class="case-desc">대화 상황에 맞는 캐릭터 이미지를 자동 발화하는 시스템 — 임베딩/리랭커 기반 매칭 정확도 20%p 개선</p>
-        </div>
-        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
-          <span class="case-badge strong">+20%p 정확도</span>
-          <span class="case-toggle" aria-hidden="true">+</span>
-        </div>
-      </button>
-      <div class="case-body" id="case-2-body">
-        <div class="case-body-inner">
-          <div class="case-body-content">
-            <div class="case-diagram">
-<svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d2-title d2-desc" font-family="'Noto Sans KR', sans-serif">
-  <title id="d2-title">캐릭터 이미지 매칭 키워드 정합 파이프라인</title>
-  <desc id="d2-desc">창작자가 입력한 이미지 키워드를 임베딩 인덱스로 만들고, 실시간 대화 맥락으로 LLM이 생성한 상황 키워드를 유사도 매칭해 이미지를 선택. 병목은 검색 모델이 아니라 LLM 키워드 생성이었고, 생성 프롬프트 조정으로 정확도 20%p 개선.</desc>
-  <defs>
-    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
-    </marker>
-  </defs>
-  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 02 · 이미지 검색</text>
-  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">캐릭터 이미지 매칭 — 키워드 정합</text>
-  <rect x="600" y="44" width="240" height="26" rx="13" fill="none" stroke="#27ae60"/>
-  <text x="720" y="61" font-size="12" text-anchor="middle" fill="#27ae60">매칭 정확도 +20%p</text>
-  <text x="40" y="108" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 창작자 키워드 인덱싱 · 오프라인</text>
-  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
-    <rect x="40" y="122" width="180" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="130" y="147">창작자 이미지 키워드</text>
-    <text x="130" y="165" font-size="10.5" fill="var(--gray-400,#9a9a94)">예: “웃음”</text>
-    <rect x="260" y="122" width="160" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-400,#9a9a94)"/>
-    <text x="340" y="153">임베딩 인덱스</text>
-  </g>
-  <line x1="220" y1="149" x2="258" y2="149" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow2)"/>
-  <path d="M340,176 C340,205 560,200 560,228" fill="none" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrow2)"/>
-  <text x="455" y="200" font-size="10.5" fill="var(--gray-400,#9a9a94)">키워드 비교</text>
-  <text x="40" y="218" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 실시간 이미지 선택</text>
-  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
-    <rect x="40" y="228" width="140" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="110" y="265">대화 맥락</text>
-    <rect x="212" y="228" width="196" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="310" y="260">LLM 상황 키워드 생성</text>
-    <text x="310" y="278" font-size="10.5" fill="var(--gray-400,#9a9a94)">예: “웃는 상황이었다”</text>
-    <rect x="490" y="228" width="150" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="565" y="260">유사도 매칭</text>
-    <text x="565" y="278" font-size="10.5" fill="var(--gray-400,#9a9a94)">코사인 · Reranker</text>
-    <rect x="672" y="228" width="134" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
-    <circle cx="692" cy="248" r="3.5" fill="#27ae60"/>
-    <text x="739" y="265">이미지 선택</text>
-  </g>
-  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow2)">
-    <line x1="180" y1="260" x2="210" y2="260"/>
-    <line x1="408" y1="260" x2="488" y2="260"/>
-    <line x1="640" y1="260" x2="670" y2="260"/>
-  </g>
-  <rect x="40" y="332" width="766" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
-  <circle cx="62" cy="354" r="4" fill="#7f77dd"/>
-  <text x="76" y="358" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
-  <text x="76" y="377" font-size="12.5" fill="var(--gray-800,#2a2a28)">병목은 검색 모델이 아니라 LLM의 키워드 생성 → 생성 프롬프트를 조정해 매칭 정확도 +20%p 개선</text>
-  <g font-size="11" fill="var(--gray-600,#5a5a56)">
-    <circle cx="46" cy="424" r="4" fill="#27ae60"/><text x="56" y="428">결과 산출</text>
-    <circle cx="146" cy="424" r="4" fill="#7f77dd"/><text x="156" y="428">배운 점</text>
-    <line x1="246" y1="424" x2="270" y2="424" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="278" y="428">사전 구축 자산 참조</text>
-  </g>
-</svg>
-            </div>
-            <div class="flow-grid">
-              <div class="flow-step">
-                <div class="step-header">
-                  <div class="step-dot problem"></div>
-                  <span class="step-label">Problem</span>
-                </div>
-                <p class="step-text">텍스트만 오가는 대화는 몰입감에 한계가 있었고, 상황에 맞는 캐릭터 이미지가 자동으로 등장하는 기능이 전혀 없었습니다.</p>
-              </div>
-              <div class="flow-step">
-                <div class="step-header">
-                  <div class="step-dot challenge"></div>
-                  <span class="step-label">Challenge</span>
-                </div>
-                <p class="step-text">창작자가 입력한 이미지 설명 키워드(예: "웃음")와 LLM이 생성한 상황 키워드(예: "웃는 상황이었다") 간의 표현 스타일 격차가 유사도 비교를 어긋나게 했습니다.</p>
-              </div>
-              <div class="flow-step">
-                <div class="step-header">
-                  <div class="step-dot approach"></div>
-                  <span class="step-label">Approach</span>
-                </div>
-                <p class="step-text">창작자 키워드 임베딩 인덱싱 → LLM 키워드 생성 후 코사인 유사도 비교 → Reranker 추가. UI 안내 개선을 시도했으나 한계가 있어, 창작자 패턴을 분석해 LLM 키워드 생성 프롬프트를 조정하는 방향으로 전환했습니다.</p>
-              </div>
-              <div class="flow-step">
-                <div class="step-header">
-                  <div class="step-dot result"></div>
-                  <span class="step-label">Result</span>
-                </div>
-                <p class="step-text">내부 자동 평가 지표 기준 매칭 정확도 +20%p 개선. 대화 흐름에 맞는 이미지가 자연스럽게 등장하며 캐릭터 몰입감이 높아졌습니다.</p>
-              </div>
-              <div class="flow-step" style="grid-column: 1 / -1;">
-                <div class="step-header">
-                  <div class="step-dot learned"></div>
-                  <span class="step-label">Learned</span>
-                </div>
-                <p class="step-text">검색 품질 문제가 항상 검색 모델의 문제는 아닙니다. 생성 프롬프트 튜닝이 더 효과적인 해결책이 된 케이스로, 문제의 병목이 어디에 있는지 정확히 파악하는 것이 중요했습니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CASE 3 -->
-    <div class="case-item reveal" id="case-3">
-      <button class="case-header" type="button" aria-expanded="false" aria-controls="case-3-body">
-        <div>
           <p class="case-meta">버블탭 · 2024 · 비용 최적화</p>
           <h2 class="case-title">LLM 비용 최적화<br>& 폴백 체계</h2>
           <p class="case-desc">영역별 캐싱 전략과 프롬프트 구조 재설계로 채팅당 LLM 단가 최대 45% 절감</p>
@@ -386,32 +267,28 @@
           <span class="case-toggle" aria-hidden="true">+</span>
         </div>
       </button>
-      <div class="case-body" id="case-3-body">
+      <div class="case-body" id="case-2-body">
         <div class="case-body-inner">
           <div class="case-body-content">
             <div class="case-diagram">
 <svg viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d3-title d3-desc" font-family="'Noto Sans KR', sans-serif">
   <title id="d3-title">프롬프트 영역 분리 캐싱과 모델 폴백 구조</title>
-  <desc id="d3-desc">프롬프트를 불변 영역(캐릭터·세계관)과 가변 영역(씬·최근 대화)으로 나누고, 불변 영역을 상단에 고정 배치해 캐시 적중률을 높임. API 장애·타임아웃 시 대체 모델로 자동 전환하는 폴백을 함께 구성해 채팅당 비용을 최대 45% 절감.</desc>
+  <desc id="d3-desc">프롬프트를 변경 빈도에 따라 불변 영역과 가변 영역으로 나누고, 불변 영역을 상단에 고정 배치해 캐시 적중률을 높임. API 장애·타임아웃 시 대체 모델로 자동 전환하는 폴백을 함께 구성해 채팅당 비용을 최대 45% 절감.</desc>
   <defs>
     <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
     </marker>
   </defs>
-  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 03 · 비용 최적화</text>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 02 · 비용 최적화</text>
   <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">프롬프트 영역 분리 캐싱 + 폴백</text>
   <rect x="610" y="44" width="230" height="26" rx="13" fill="none" stroke="#27ae60"/>
   <text x="725" y="61" font-size="12" text-anchor="middle" fill="#27ae60">채팅당 비용 최대 45%↓</text>
   <text x="40" y="106" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 프롬프트 구조 재배치</text>
-  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
-    <rect x="40" y="118" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
-    <text x="220" y="143">불변 · 캐릭터</text>
-    <rect x="40" y="162" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
-    <text x="220" y="187">불변 · 세계관</text>
-    <rect x="40" y="214" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="220" y="239">가변 · 씬</text>
-    <rect x="40" y="258" width="360" height="40" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="220" y="283">가변 · 최근 대화</text>
+  <g font-size="14" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="118" width="360" height="70" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <text x="220" y="159">불변 영역</text>
+    <rect x="40" y="210" width="360" height="70" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="220" y="251">가변 영역</text>
   </g>
   <g font-size="12">
     <circle cx="430" cy="160" r="4" fill="#27ae60"/>
@@ -432,7 +309,7 @@
   <text x="284" y="366" font-size="10.5" text-anchor="middle" fill="var(--gray-400,#9a9a94)">API 장애 · 타임아웃 시</text>
   <rect x="40" y="416" width="766" height="50" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
   <circle cx="62" cy="437" r="4" fill="#7f77dd"/>
-  <text x="76" y="434" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
+  <text x="76" y="434" font-size="10.5" letter-spacing="0.5" fill="#7f77dd">배운 점</text>
   <text x="76" y="451" font-size="12.5" fill="var(--gray-800,#2a2a28)">비용 최적화 문제가 결국 프롬프트 구조 설계 문제로 귀결됐다</text>
 </svg>
             </div>
@@ -449,14 +326,14 @@
                   <div class="step-dot challenge"></div>
                   <span class="step-label">Challenge</span>
                 </div>
-                <p class="step-text">캐릭터/세계관/씬 세 영역의 조합으로 프롬프트가 구성되어 유저마다 다른 에셋 조합을 사용합니다. 캐싱은 내용 변경 시 즉시 무효화되기 때문에 배치 순서가 히트율의 핵심 변수였습니다.</p>
+                <p class="step-text">프롬프트가 여러 영역의 조합으로 구성되어 유저마다 다른 조합을 사용합니다. 캐싱은 내용 변경 시 즉시 무효화되기 때문에 영역 배치 순서가 히트율의 핵심 변수였습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
                   <div class="step-dot approach"></div>
                   <span class="step-label">Approach</span>
                 </div>
-                <p class="step-text">프롬프트를 영역별로 분리해 독립 캐싱 적용. 불변 영역(캐릭터, 세계관)을 상단에, 가변 영역(씬, 최근 대화)을 하단에 배치하는 구조로 재설계했습니다. API 장애·타임아웃 시 대체 모델로 자동 전환하는 폴백 로직도 함께 구축했습니다.</p>
+                <p class="step-text">프롬프트를 변경 빈도에 따라 영역별로 분리해 독립 캐싱 적용. 불변 영역을 상단에, 가변 영역을 하단에 배치하는 구조로 재설계했습니다. API 장애·타임아웃 시 대체 모델로 자동 전환하는 폴백 로직도 함께 구축했습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
@@ -478,70 +355,71 @@
       </div>
     </div>
 
-    <!-- CASE 4 -->
-    <div class="case-item reveal" id="case-4">
-      <button class="case-header" type="button" aria-expanded="false" aria-controls="case-4-body">
+    <!-- CASE 3 -->
+    <div class="case-item reveal" id="case-3">
+      <button class="case-header" type="button" aria-expanded="false" aria-controls="case-3-body">
         <div>
-          <p class="case-meta">버블탭 · 2024 · 평가 자동화</p>
-          <h2 class="case-title">LLM 응답 품질<br>평가 체계 구축</h2>
-          <p class="case-desc">자체 LLM 구축을 위한 자동화 평가 파이프라인 — 루브릭 설계부터 엔트로피 기반 데이터셋 구축까지</p>
+          <p class="case-meta">버블탭 · 2025 · RAG · 이미지 검색</p>
+          <h2 class="case-title">캐릭터 이미지<br>매칭 RAG</h2>
+          <p class="case-desc">대화 상황에 맞는 캐릭터 이미지를 자동 발화하는 시스템<br>— 매칭 정확도 20%p 개선</p>
         </div>
         <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
-          <span class="case-badge">평가 · 자동화</span>
+          <span class="case-badge strong">+20%p 정확도</span>
           <span class="case-toggle" aria-hidden="true">+</span>
         </div>
       </button>
-      <div class="case-body" id="case-4-body">
+      <div class="case-body" id="case-3-body">
         <div class="case-body-inner">
           <div class="case-body-content">
             <div class="case-diagram">
-<svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d4-title d4-desc" font-family="'Noto Sans KR', sans-serif">
-  <title id="d4-title">루브릭 기반 LLM 응답 자동 평가 파이프라인</title>
-  <desc id="d4-desc">5가지 루브릭 기준으로 휴먼 평가를 수행하고, Greedy Max-Entropy Selection으로 점수대별 균일 분포 데이터셋을 만든 뒤, 여러 LLM과 프롬프트 조합을 실험해 휴먼 평가와 상관계수가 높은 조합을 자동 평가기로 선정.</desc>
+<svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d2-title d2-desc" font-family="'Noto Sans KR', sans-serif">
+  <title id="d2-title">캐릭터 이미지 매칭 키워드 정합 파이프라인</title>
+  <desc id="d2-desc">창작자가 입력한 이미지 키워드를 임베딩 인덱스로 만들고, 실시간 대화 맥락으로 LLM이 생성한 상황 키워드를 유사도 매칭해 이미지를 발화. 병목은 검색 모델이 아니라 LLM 키워드 생성이었고, 생성 프롬프트 조정으로 정확도 20%p 개선.</desc>
   <defs>
-    <marker id="arrow4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
     </marker>
   </defs>
-  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 04 · 평가 자동화</text>
-  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">루브릭 기반 응답 자동 평가</text>
-  <text x="40" y="106" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 5가지 평가 루브릭</text>
-  <g font-size="11.5" fill="var(--gray-800,#2a2a28)" text-anchor="middle">
-    <rect x="40" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="115" y="142">캐릭터 일관성</text>
-    <rect x="202" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="277" y="142">맥락 · 기억</text>
-    <rect x="364" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="439" y="142">언어 품질</text>
-    <rect x="526" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="601" y="142">형식 · 기술</text>
-    <rect x="688" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="763" y="142">세계관 · 씬 준수</text>
-  </g>
-  <path d="M439,156 C439,176 115,176 115,200" fill="none" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrow4)"/>
-  <text x="300" y="176" font-size="10.5" fill="var(--gray-400,#9a9a94)">루브릭 기준 적용</text>
-  <text x="40" y="196" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 평가기 구축</text>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 03 · 이미지 검색</text>
+  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">캐릭터 이미지 매칭 — 키워드 정합</text>
+  <rect x="600" y="44" width="240" height="26" rx="13" fill="none" stroke="#27ae60"/>
+  <text x="720" y="61" font-size="12" text-anchor="middle" fill="#27ae60">매칭 정확도 +20%p</text>
+  <text x="40" y="108" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 창작자 키워드 인덱싱 · 오프라인</text>
   <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
-    <rect x="40" y="206" width="150" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="115" y="243">휴먼 평가</text>
-    <rect x="222" y="206" width="200" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="322" y="238">Max-Entropy 데이터셋</text>
-    <text x="322" y="256" font-size="10.5" fill="var(--gray-400,#9a9a94)">점수대별 균일 분포</text>
-    <rect x="454" y="206" width="190" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
-    <text x="549" y="238">LLM×프롬프트 실험</text>
-    <text x="549" y="256" font-size="10.5" fill="var(--gray-400,#9a9a94)">상관계수 비교</text>
-    <rect x="676" y="206" width="162" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
-    <circle cx="697" cy="226" r="3.5" fill="#27ae60"/>
-    <text x="757" y="243">자동 평가기</text>
+    <rect x="40" y="122" width="180" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="130" y="147">창작자 이미지 키워드</text>
+    <text x="130" y="165" font-size="10.5" fill="var(--gray-400,#9a9a94)">예: “웃음”</text>
+    <rect x="260" y="122" width="160" height="54" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-400,#9a9a94)"/>
+    <text x="340" y="153">임베딩 인덱스</text>
   </g>
-  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow4)">
-    <line x1="190" y1="238" x2="220" y2="238"/>
-    <line x1="422" y1="238" x2="452" y2="238"/>
-    <line x1="644" y1="238" x2="674" y2="238"/>
+  <line x1="220" y1="149" x2="258" y2="149" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow2)"/>
+  <path d="M340,176 C340,205 560,200 560,228" fill="none" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#arrow2)"/>
+  <text x="455" y="200" font-size="10.5" fill="var(--gray-400,#9a9a94)">키워드 비교</text>
+  <text x="40" y="218" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 실시간 이미지 발화</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="228" width="140" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="110" y="265">대화 맥락</text>
+    <rect x="212" y="228" width="196" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="310" y="260">LLM 상황 키워드 생성</text>
+    <text x="310" y="278" font-size="10.5" fill="var(--gray-400,#9a9a94)">예: “웃는 상황이었다”</text>
+    <rect x="490" y="228" width="150" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="565" y="265">유사도 매칭</text>
+    <rect x="672" y="228" width="134" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <circle cx="692" cy="248" r="3.5" fill="#27ae60"/>
+    <text x="739" y="265">이미지 발화</text>
   </g>
-  <rect x="40" y="312" width="798" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
-  <circle cx="62" cy="334" r="4" fill="#7f77dd"/>
-  <text x="76" y="338" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
-  <text x="76" y="357" font-size="12.5" fill="var(--gray-800,#2a2a28)">많은 closed LLM이 휴먼 평가와 상관이 낮았다 — 좋은 평가는 좋은 모델이 아니라 좋은 기준에서 나온다</text>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow2)">
+    <line x1="180" y1="260" x2="210" y2="260"/>
+    <line x1="408" y1="260" x2="488" y2="260"/>
+    <line x1="640" y1="260" x2="670" y2="260"/>
+  </g>
+  <rect x="40" y="332" width="766" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
+  <circle cx="62" cy="354" r="4" fill="#7f77dd"/>
+  <text x="76" y="358" font-size="10.5" letter-spacing="0.5" fill="#7f77dd">배운 점</text>
+  <text x="76" y="377" font-size="12.5" fill="var(--gray-800,#2a2a28)">병목은 검색 모델이 아니라 LLM의 키워드 생성 → 생성 프롬프트를 조정해 매칭 정확도 +20%p 개선</text>
   <g font-size="11" fill="var(--gray-600,#5a5a56)">
-    <circle cx="46" cy="402" r="4" fill="#27ae60"/><text x="56" y="406">결과 산출</text>
-    <circle cx="146" cy="402" r="4" fill="#7f77dd"/><text x="156" y="406">배운 점</text>
-    <line x1="246" y1="402" x2="270" y2="402" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="278" y="406">루브릭 기준 적용</text>
+    <circle cx="46" cy="424" r="4" fill="#27ae60"/><text x="56" y="428">결과 산출</text>
+    <line x1="146" y1="424" x2="170" y2="424" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="178" y="428">사전 구축 자산 참조</text>
   </g>
 </svg>
             </div>
@@ -551,35 +429,35 @@
                   <div class="step-dot problem"></div>
                   <span class="step-label">Problem</span>
                 </div>
-                <p class="step-text">자체 LLM 구축을 위한 학습 데이터 품질 검증 과정에서, 캐릭터 챗 응답의 "좋은 대화"를 수치로 정의하는 기준 자체가 없었습니다.</p>
+                <p class="step-text">텍스트만 오가는 대화는 몰입감에 한계가 있었고, 상황에 맞는 캐릭터 이미지가 자동으로 등장하는 기능이 전혀 없었습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
                   <div class="step-dot challenge"></div>
                   <span class="step-label">Challenge</span>
                 </div>
-                <p class="step-text">정성적인 대화 데이터를 정량적으로 평가하기 위한 루브릭 프롬프트 작성이 핵심 난제였습니다. 평가 모델이 없는 상태에서 균일한 데이터 분포도 확보해야 했습니다.</p>
+                <p class="step-text">사진에는 여러 키워드가 포함된 경우가 많아, 복합적인 요소들 사이의 유사도를 판단하기 어려웠습니다. 유사도 매칭 시스템으로 매칭 정확도를 20%p 개선했지만, 이러한 이유로 지속적으로 개선하고 있습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
                   <div class="step-dot approach"></div>
                   <span class="step-label">Approach</span>
                 </div>
-                <p class="step-text">캐릭터 일관성, 맥락·기억, 언어 품질, 형식·기술, 세계관·씬 준수 5가지 루브릭 기준 설계 → 휴먼 평가 후 Greedy Max-Entropy Selection으로 점수대별 균일 분포 데이터셋 구축 → 다양한 closed LLM과 프롬프트 조합 실험으로 휴먼 평가와 높은 상관계수를 달성하는 조합 선정.</p>
+                <p class="step-text">창작자 키워드 임베딩 인덱싱 → LLM 키워드 생성 후 임베딩 유사도 매칭. UI 안내 개선을 시도했으나 한계가 있어, 창작자 패턴을 분석해 LLM 키워드 생성 프롬프트를 조정하는 방향으로 전환했습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
                   <div class="step-dot result"></div>
                   <span class="step-label">Result</span>
                 </div>
-                <p class="step-text">자동화된 평가 파이프라인으로 학습 데이터 품질 검증을 사람 없이도 일관되게 수행할 수 있는 체계를 구축했습니다.</p>
+                <p class="step-text">내부 평가 지표 기준 매칭 정확도 +20%p 개선.</p>
               </div>
               <div class="flow-step" style="grid-column: 1 / -1;">
                 <div class="step-header">
                   <div class="step-dot learned"></div>
                   <span class="step-label">Learned</span>
                 </div>
-                <p class="step-text">많은 closed LLM이 생각보다 휴먼 평가와 상관관계가 낮았습니다. 좋은 평가 시스템은 좋은 모델이 아니라 좋은 기준에서 나온다는 것을 배웠습니다.</p>
+                <p class="step-text">검색 품질 문제가 항상 검색 모델의 문제는 아닙니다. 생성 프롬프트 튜닝이 더 효과적인 해결책이 된 케이스로, 문제의 병목이 어디에 있는지 정확히 파악하는 것이 중요했습니다.</p>
               </div>
             </div>
           </div>
@@ -587,20 +465,20 @@
       </div>
     </div>
 
-    <!-- CASE 5 -->
-    <div class="case-item reveal" id="case-5">
-      <button class="case-header" type="button" aria-expanded="false" aria-controls="case-5-body">
+    <!-- CASE 4 -->
+    <div class="case-item reveal" id="case-4">
+      <button class="case-header" type="button" aria-expanded="false" aria-controls="case-4-body">
         <div>
-          <p class="case-meta">버블탭 · 2024 · 프롬프트 엔지니어링</p>
+          <p class="case-meta">버블탭 · 2025 · 프롬프트 엔지니어링</p>
           <h2 class="case-title">다국가 시장<br>프롬프트 설계 & A/B</h2>
-          <p class="case-desc">한국·태국·일본·대만 4개 시장의 특성에 맞춘 시스템 프롬프트 설계와 A/B 테스트 기반 품질·안전성 개선</p>
+          <p class="case-desc">한국·태국·일본·대만 4개 시장의 특성에 맞춘<br>시스템 프롬프트 설계와 A/B 테스트 기반 품질·안전성 개선</p>
         </div>
         <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
           <span class="case-badge">4개 시장 · 안전성</span>
           <span class="case-toggle" aria-hidden="true">+</span>
         </div>
       </button>
-      <div class="case-body" id="case-5-body">
+      <div class="case-body" id="case-4-body">
         <div class="case-body-inner">
           <div class="case-body-content">
             <div class="case-diagram">
@@ -612,7 +490,7 @@
       <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
     </marker>
   </defs>
-  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 05 · 프롬프트 엔지니어링</text>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 04 · 프롬프트 엔지니어링</text>
   <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">시장별 프롬프트 설계 + A/B 루프</text>
   <text x="40" y="106" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 시장별 시스템 프롬프트</text>
   <g font-size="12.5" fill="var(--gray-800,#2a2a28)" text-anchor="middle">
@@ -649,7 +527,7 @@
   <text x="845" y="288" font-size="10.5" text-anchor="middle" fill="var(--gray-400,#9a9a94)" transform="rotate(90 845 288)">반복</text>
   <rect x="40" y="390" width="750" height="56" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
   <circle cx="62" cy="412" r="4" fill="#7f77dd"/>
-  <text x="76" y="416" font-size="10" letter-spacing="1.5" fill="#7f77dd">LEARNED</text>
+  <text x="76" y="416" font-size="10.5" letter-spacing="0.5" fill="#7f77dd">배운 점</text>
   <text x="76" y="435" font-size="12.5" fill="var(--gray-800,#2a2a28)">프롬프트 개선은 감이 아니라 측정으로 — 트레이드오프가 있는 문제일수록 평가 루프가 의사결정의 근거가 된다</text>
 </svg>
             </div>
@@ -688,6 +566,119 @@
                   <span class="step-label">Learned</span>
                 </div>
                 <p class="step-text">프롬프트 개선은 감이 아니라 측정으로 결정해야 한다는 것을 체감했습니다. 트레이드오프가 있는 문제일수록 정성·정량을 함께 보는 평가 루프가 의사결정의 근거가 됩니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 5 -->
+    <div class="case-item reveal" id="case-5">
+      <button class="case-header" type="button" aria-expanded="false" aria-controls="case-5-body">
+        <div>
+          <p class="case-meta">버블탭 · 2026 · 평가 자동화</p>
+          <h2 class="case-title">LLM 응답 품질<br>평가 체계 구축</h2>
+          <p class="case-desc">자체 LLM 구축을 위한 자동화 평가 파이프라인<br>— 루브릭 설계부터 엔트로피 기반 데이터셋 구축까지</p>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
+          <span class="case-badge">평가 · 자동화</span>
+          <span class="case-toggle" aria-hidden="true">+</span>
+        </div>
+      </button>
+      <div class="case-body" id="case-5-body">
+        <div class="case-body-inner">
+          <div class="case-body-content">
+            <div class="case-diagram">
+<svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d4-title d4-desc" font-family="'Noto Sans KR', sans-serif">
+  <title id="d4-title">루브릭 기반 LLM 응답 자동 평가 파이프라인</title>
+  <desc id="d4-desc">5가지 루브릭 기준으로 휴먼 평가를 수행하고, Greedy Max-Entropy Selection으로 점수대별 균일 분포 데이터셋을 만든 뒤, 여러 LLM과 프롬프트 조합을 실험해 휴먼 평가와 상관계수가 높은 조합을 루브릭 모델로 선정.</desc>
+  <defs>
+    <marker id="arrow4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--gray-400,#9a9a94)"/>
+    </marker>
+  </defs>
+  <text x="40" y="36" font-size="11" letter-spacing="2" fill="var(--gray-400,#9a9a94)">버블탭 · CASE 05 · 평가 자동화</text>
+  <text x="40" y="64" font-size="23" font-family="'Noto Serif KR', Georgia, serif" fill="var(--black,#0f0f0f)">루브릭 기반 응답 자동 평가</text>
+  <text x="40" y="106" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">① 5가지 평가 루브릭</text>
+  <g font-size="11.5" fill="var(--gray-800,#2a2a28)" text-anchor="middle">
+    <rect x="40" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="115" y="142">캐릭터 일관성</text>
+    <rect x="202" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="277" y="142">맥락 · 기억</text>
+    <rect x="364" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="439" y="142">언어 품질</text>
+    <rect x="526" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="601" y="142">형식 · 기술</text>
+    <rect x="688" y="118" width="150" height="38" rx="19" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/><text x="763" y="142">세계관 · 씬 준수</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" fill="none">
+    <line x1="115" y1="156" x2="115" y2="166"/>
+    <line x1="763" y1="156" x2="763" y2="166"/>
+    <line x1="115" y1="166" x2="763" y2="166"/>
+    <path d="M439,166 C439,186 115,184 115,202" stroke-dasharray="4 4" marker-end="url(#arrow4)"/>
+  </g>
+  <text x="455" y="184" font-size="10.5" fill="var(--gray-400,#9a9a94)">5개 항목 모두 휴먼 평가</text>
+  <text x="40" y="196" font-size="12" letter-spacing="1" fill="var(--gray-600,#5a5a56)">② 루브릭 모델 구축</text>
+  <g font-size="13" fill="var(--black,#0f0f0f)" text-anchor="middle">
+    <rect x="40" y="206" width="150" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="115" y="243">휴먼 평가</text>
+    <rect x="222" y="206" width="200" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="322" y="238">Max-Entropy 데이터셋</text>
+    <text x="322" y="256" font-size="10.5" fill="var(--gray-400,#9a9a94)">점수대별 균일 분포</text>
+    <rect x="454" y="206" width="190" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="var(--gray-200,#d1d1cc)"/>
+    <text x="549" y="238">LLM×프롬프트 실험</text>
+    <text x="549" y="256" font-size="10.5" fill="var(--gray-400,#9a9a94)">상관계수 비교</text>
+    <rect x="676" y="206" width="162" height="64" rx="4" fill="var(--gray-50,#f5f5f3)" stroke="#27ae60"/>
+    <circle cx="697" cy="226" r="3.5" fill="#27ae60"/>
+    <text x="757" y="243">루브릭 모델</text>
+  </g>
+  <g stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" marker-end="url(#arrow4)">
+    <line x1="190" y1="238" x2="220" y2="238"/>
+    <line x1="422" y1="238" x2="452" y2="238"/>
+    <line x1="644" y1="238" x2="674" y2="238"/>
+  </g>
+  <rect x="40" y="312" width="798" height="58" rx="4" fill="none" stroke="var(--gray-200,#d1d1cc)" stroke-dasharray="5 4"/>
+  <circle cx="62" cy="334" r="4" fill="#7f77dd"/>
+  <text x="76" y="338" font-size="10.5" letter-spacing="0.5" fill="#7f77dd">배운 점</text>
+  <text x="76" y="357" font-size="12.5" fill="var(--gray-800,#2a2a28)">캐릭터 챗봇에서 적합한 LLM은 벤치마크 순위와 다를 수 있다 — 일관된 기준의 휴먼 평가와 균일한 데이터셋이 중요</text>
+  <g font-size="11" fill="var(--gray-600,#5a5a56)">
+    <circle cx="46" cy="402" r="4" fill="#27ae60"/><text x="56" y="406">결과 산출</text>
+    <line x1="146" y1="402" x2="170" y2="402" stroke="var(--gray-400,#9a9a94)" stroke-width="1.2" stroke-dasharray="4 4"/><text x="178" y="406">루브릭 기준 적용</text>
+  </g>
+</svg>
+            </div>
+            <div class="flow-grid">
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot problem"></div>
+                  <span class="step-label">Problem</span>
+                </div>
+                <p class="step-text">자체 LLM 구축을 위한 학습 데이터 품질 검증 과정에서, 캐릭터 챗 응답의 "좋은 대화"를 수치로 정의하는 기준 자체가 없었습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot challenge"></div>
+                  <span class="step-label">Challenge</span>
+                </div>
+                <p class="step-text">정성적인 대화 데이터를 정량적으로 평가하기 위한 루브릭 프롬프트 작성이 핵심 난제였습니다. 평가 모델이 없는 상태에서 균일한 데이터 분포도 확보해야 했습니다.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot approach"></div>
+                  <span class="step-label">Approach</span>
+                </div>
+                <p class="step-text">캐릭터 일관성, 맥락·기억, 언어 품질, 형식·기술, 세계관·씬 준수 5가지 루브릭 기준 설계 → 휴먼 평가 후 Greedy Max-Entropy Selection으로 점수대별 균일 분포 데이터셋 구축 → 다양한 closed LLM과 프롬프트 조합 실험으로 휴먼 평가와 높은 상관계수를 달성하는 조합 선정.</p>
+              </div>
+              <div class="flow-step">
+                <div class="step-header">
+                  <div class="step-dot result"></div>
+                  <span class="step-label">Result</span>
+                </div>
+                <p class="step-text">자동화된 평가 파이프라인으로 학습 데이터 품질 검증을 사람 없이도 일관되게 수행할 수 있는 체계를 구축했습니다.</p>
+              </div>
+              <div class="flow-step" style="grid-column: 1 / -1;">
+                <div class="step-header">
+                  <div class="step-dot learned"></div>
+                  <span class="step-label">Learned</span>
+                </div>
+                <p class="step-text">캐릭터 챗봇에서는 유저의 취향과 상황에 따라 적합한 LLM이 매번 달라, 흔한 벤치마크 점수 순위와 일치하지 않을 수 있습니다. 그래서 큰 틀의 평가 기준을 확실히 잡고 일관되게 평가하는 것이 중요했고, 이를 위해 루브릭 기반의 휴먼 평가와 균일한 데이터셋 구성이 필요했습니다.</p>
               </div>
             </div>
           </div>
@@ -784,7 +775,6 @@
     <p class="contact-desc">서비스의 LLM 기능을 함께 연구하고 고도화할 팀이라면<br>언제든 연락 주세요.</p>
     <div class="contact-links">
       <a href="mailto:junhyuk6230@gmail.com" class="contact-link">junhyuk6230@gmail.com</a>
-      <a href="https://github.com/hyuk-ko" class="contact-link" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </div>
