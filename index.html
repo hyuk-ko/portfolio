@@ -85,9 +85,9 @@
     </h1>
     <div class="hero-bottom">
       <p class="hero-desc">
-        LLM 서비스의 품질·비용·안정성 문제를<br>
-        연구하고 PoC로 검증해<br>
-        제품에 반영해 왔습니다.
+        LLM 서비스의 품질·비용·안정성 —<br>
+        정답이 없는 문제에 기준을 세우고<br>
+        실험으로 검증해 제품에 반영합니다.
       </p>
     </div>
   </div>
@@ -98,9 +98,9 @@
   <p class="section-label reveal">소개</p>
   <div class="about-grid">
     <p class="about-lead reveal">
-      범용 기법을 그대로 쓰기보다,<br>
-      <em>도메인에 맞게 검증하고</em><br>
-      다듬어가는 엔지니어입니다.
+      정답이 없는 문제에서<br>
+      <em>판단의 기준을 먼저 설계하는</em><br>
+      엔지니어입니다.
     </p>
     <div class="about-body reveal">
       <p>
@@ -119,6 +119,8 @@
       <p>
         널리 알려진 기법도 도메인 특성에 따라 유효하지 않을 수 있다고 믿습니다.
         직접 실험으로 검증하고 불필요한 스택을 덜어내는 방식으로 문제의 병목을 찾습니다.
+        "좋은 대화"처럼 정답이 없는 문제 앞에서는 평가 기준을 먼저 정의하고,
+        휴먼 평가와의 상관계수로 그 기준 자체를 검증해 의사결정의 근거를 만들어 왔습니다.
       </p>
     </div>
   </div>
@@ -239,7 +241,7 @@
                   <div class="step-dot result"></div>
                   <span class="step-label">Result</span>
                 </div>
-                <p class="step-text">수개월 전 대화를 자연스럽게 이어받는 응답이 가능해졌습니다. "챗봇이 나를 기억한다"는 사용자 체감이 정성적으로 개선됐습니다.</p>
+                <p class="step-text">슬라이딩 윈도우 밖으로 잘려나가던 과거 대화를 검색해 참조하는 응답이 가능해졌습니다. 컨텍스트 한계로 불가능했던 수개월 전 대화 회상을 0→1로 기능화한 사례입니다.</p>
               </div>
               <div class="flow-step" style="grid-column: 1 / -1;">
                 <div class="step-header">
@@ -436,7 +438,7 @@
                   <div class="step-dot challenge"></div>
                   <span class="step-label">Challenge</span>
                 </div>
-                <p class="step-text">사진에는 여러 키워드가 포함된 경우가 많아, 복합적인 요소들 사이의 유사도를 판단하기 어려웠습니다. 유사도 매칭 시스템으로 매칭 정확도를 20%p 개선했지만, 이러한 이유로 지속적으로 개선하고 있습니다.</p>
+                <p class="step-text">한 이미지에 여러 키워드가 얽혀 있어 단일 유사도 점수로 매칭을 판단하기 어려웠습니다. 매칭 실패의 원인이 검색 모델에 있는지, LLM의 키워드 생성에 있는지부터 특정해야 했습니다.</p>
               </div>
               <div class="flow-step">
                 <div class="step-header">
@@ -671,7 +673,7 @@
                   <div class="step-dot result"></div>
                   <span class="step-label">Result</span>
                 </div>
-                <p class="step-text">자동화된 평가 파이프라인으로 학습 데이터 품질 검증을 사람 없이도 일관되게 수행할 수 있는 체계를 구축했습니다.</p>
+                <p class="step-text">"좋은 대화"의 기준이 없던 상태에서 루브릭이라는 기준을 만들고, 휴먼 평가와의 상관계수로 그 기준을 검증했습니다. 학습 데이터 품질 검증을 사람 개입 없이 일관된 기준으로 수행하는 체계가 됐습니다.</p>
               </div>
               <div class="flow-step" style="grid-column: 1 / -1;">
                 <div class="step-header">
