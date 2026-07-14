@@ -9,3 +9,6 @@ serve.ps1
 박준혁_이력서_최종.md
 resume.md
 resume_Proposed Plan.txt
+
+# Private work data (resume plans, work-log sheets) — never commit
+data/
