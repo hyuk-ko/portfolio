@@ -54,6 +54,9 @@ body {
   background: var(--white);
   color: var(--black);
   line-height: 1.7;
+  /* Korean typography: wrap at word boundaries, never mid-word */
+  word-break: keep-all;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   transition: background 0.4s var(--ease-out), color 0.4s var(--ease-out);
 }
@@ -121,12 +124,8 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* Top padding reserves space for the fixed nav so content never slides under it */
-  padding: calc(var(--nav-h) + 3rem) 3rem 4rem;
+  /* Fixed paddings (no vh-centering) so content position never depends on viewport ratio */
+  padding: calc(var(--nav-h) + 5rem) 3rem 5.5rem;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -142,7 +141,7 @@ nav {
 }
 .hero-title {
   font-family: var(--serif);
-  font-size: clamp(32px, 6.5vw, 72px);
+  font-size: clamp(30px, 5.5vw, 58px);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -189,7 +188,7 @@ section {
 
 /* ABOUT */
 .about-grid {
-  max-width: 760px; /* single-column body, capped for readable line length */
+  max-width: 860px; /* single-column body, capped for readable line length */
 }
 .about-body p {
   font-size: 16px;
@@ -621,7 +620,7 @@ footer span {
   nav { padding: 1rem 1.5rem; }
   .nav-right { gap: 1.25rem; }
   .nav-links { gap: 1.25rem; }
-  .hero { padding: calc(var(--nav-h) + 1.5rem) 1.5rem 4rem; min-height: 0; }
+  .hero { padding: calc(var(--nav-h) + 2rem) 1.5rem 4rem; }
   .hero-eyebrow { margin-bottom: 1.5rem; }
   .hero-title { margin-bottom: 2rem; }
   .hero-desc br { display: none; } /* let short lines flow naturally on narrow screens */
